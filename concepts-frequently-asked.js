@@ -62,7 +62,7 @@ console.log(add10(10)); //20
 
 
 // -------------------------------------------------------------------------------------------------------
-//  foreach, for - in, for - of
+// 3. foreach, for - in, for - of
 // The forEach() method calls a function for each element in an array
 const fruits = ["apple", "orange", "cherry"];
 fruits.forEach(myFunction);
