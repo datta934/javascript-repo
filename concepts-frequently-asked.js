@@ -49,7 +49,7 @@ getName();
 
 
 function add(x) {
-    return function(y) {
+    return function (y) {
         return x + y;
     }
 }
@@ -62,3 +62,35 @@ console.log(add10(10)); //20
 
 
 // -------------------------------------------------------------------------------------------------------
+//  foreach, for - in, for - of
+// The forEach() method calls a function for each element in an array
+const fruits = ["apple", "orange", "cherry"];
+fruits.forEach(myFunction);
+
+function myFunction(fruit) {
+    console.log(fruit);
+}
+
+// for in statement loops through the properties of an Object
+const person = { fname: "John", lname: "Doe", age: 25 };
+
+let txt = "";
+for (let x in person) {
+    txt += person[x] + " ";
+}
+
+//The JavaScript for of statement loops through the values of an iterable object
+// It lets you loop over iterable data structures such as Arrays, Strings, Maps, NodeLists, and more:
+let language = "JavaScript";
+
+let text = "";
+for (let x of language) {
+    text += x;
+}
+
+const cars = ["BMW", "Volvo", "Mini"];
+
+let text2 = "";
+for (let x of cars) {
+    text += x;
+}
