@@ -1,4 +1,4 @@
-# javascript-repo
+# Javascript - Coding, Conecpts, Patterns
 This repo is for frequently asked javascript coding questions, concepts and examples
 
 Concepts based questions:
