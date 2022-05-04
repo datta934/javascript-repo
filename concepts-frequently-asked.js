@@ -94,3 +94,29 @@ let text2 = "";
 for (let x of cars) {
     text += x;
 }
+
+//-----------------------------------------------------------------------
+// Map, Filter, Reduce
+// Map - It applies a given function on all the elements of the array and returns the updated array
+function twice(n) {
+    return n * 2;
+}
+arr = new Array(1, 2, 3, 6, 5, 4);
+
+var new_arr1 = arr.map(twice)
+console.log(new_arr1); // [1, 4, 6, 12, 10, 8]
+
+// Filter - It filters the elements of the array that return false for the applied condition and returns the array which contains elements that satisfy the applied condition.
+var new_arr2 = arr.filter(function (x) {
+    return x % 2 == 0;
+});
+console.log(new_arr2) //[ 2, 6, 4]
+
+// Reduce - It reduces all the elements of the array to a single value by repeatedly applying a function.
+function product(a, b) {
+    return a * b;
+}
+
+var product_of_arr = arr.reduce(product)
+console.log(product_of_arr) //720
+
