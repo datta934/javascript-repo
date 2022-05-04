@@ -104,7 +104,7 @@ function twice(n) {
 arr = new Array(1, 2, 3, 6, 5, 4);
 
 var new_arr1 = arr.map(twice)
-console.log(new_arr1); // [1, 4, 6, 12, 10, 8]
+console.log(new_arr1); // [2, 4, 6, 12, 10, 8]
 
 // Filter - It filters the elements of the array that return false for the applied condition and returns the array which contains elements that satisfy the applied condition.
 var new_arr2 = arr.filter(function (x) {
