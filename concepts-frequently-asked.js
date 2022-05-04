@@ -120,3 +120,23 @@ function product(a, b) {
 var product_of_arr = arr.reduce(product)
 console.log(product_of_arr) //720
 
+// Async, Await
+// Async function always returns a promise
+async function f1() {
+    return 1
+};
+f1().then(alert) //1
+
+// Await makes JavaScript wait until that promise settles and returns its result
+async function f2() {
+
+    let promise = new Promise((resolve, reject) => {
+        setTimeout(() => resolve("done!"), 1000)
+    });
+
+    let result = await promise; // wait until the promise resolves (*)
+
+    alert(result); // "done!"
+}
+
+f2();
