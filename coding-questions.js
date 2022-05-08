@@ -117,3 +117,68 @@ function getFrequency(string) {
 };
 
 getFrequency('Indivisibilities');
+
+//Example string abc.de.f.g and output gfe.dc.b.a
+// with for loop - Time complexity -> O(N) Auxiliary Space -> O(N)
+function preserveCharacter(str) {
+    let inputArray = str.split("");
+    let result = new Array(inputArray.length);
+    // Mark characters in result
+    for (let i = 0; i < inputArray.length; i++) {
+        if (inputArray[i] == '.') {
+            result[i] = '.';
+        }
+    }
+
+    let j = result.length - 1;
+    for (let i = 0; i < inputArray.length; i++) {
+
+        // Ignore character in input string
+        if (inputArray[i] != '.') {
+
+            // ignore character in result.
+            if (result[j] == '.') {
+                j--;
+            }
+            result[j] = inputArray[i];
+            j--;
+        }
+    }
+    console.log((result).join("")); // gfe.dc.b.a
+}
+preserveCharacter('abc.de.f.g');
+
+// Optimized - with two pointers
+function preserveCharacter(str) {
+    let n = str.length;
+    // Initialize two pointers
+    // as two corners
+    let start = 0;
+    let end = n - 1;
+
+    let Str = str.split('');
+    while (start < end) {
+
+        // If character at start or
+        // end is space, ignore it
+        if (Str[start] == '.') {
+            start++;
+            continue;
+        }
+        else if (Str[end] == '.') {
+            end--;
+            continue;
+        }
+
+        // If both are not spaces, do swap
+        else {
+            let temp = Str[start];
+            Str[start] = Str[end];
+            Str[end] = temp;
+            start++;
+            end--;
+        }
+    }
+    console.log(Str.join(""));
+}
+
